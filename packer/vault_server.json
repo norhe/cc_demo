@@ -38,6 +38,11 @@
       },
       {
         "type": "file",
+        "source": "files/admin-policy.hcl.policy",
+        "destination": "/tmp/admin_policy.hcl"
+      },
+      {
+        "type": "file",
         "source": "files/enable_vault_acl.sh",
         "destination": "/tmp/enable_vault_acl.sh"
       },
@@ -47,6 +52,7 @@
           "sudo chmod a+x /tmp/install_vault.sh",
           "sudo /tmp/install_vault.sh",
           "sudo mv /tmp/config.hcl /etc/vault/config.hcl",
+          "sudo mv /tmp/admin_policy.hcl /etc/vault/admin_policy.hcl.policy",
           "sudo chown -R consul:consul /etc/consul",
           "sudo chown -R vault:vault /etc/vault",
           "sudo systemctl enable consul",

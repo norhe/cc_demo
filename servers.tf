@@ -87,7 +87,9 @@ resource "google_compute_instance" "servers-east-vault" {
 
   provisioner "remote-exec" {
     inline = [
-      "sleep 30",
+      "sleep 50",
+      "sudo systemctl restart vault",
+      "sleep 2",
       "vault operator init -stored-shares=1 -recovery-shares=1 -recovery-threshold=1 -key-shares=1 -key-threshold=1 > /tmp/unseal",
       "sudo mv /tmp/unseal /etc/vault"
     ]

@@ -22,5 +22,9 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl disable consul_enable_acl.service
 
+echo "Installing envconsul..."
+wget https://releases.hashicorp.com/envconsul/0.7.3/envconsul_0.7.3_linux_amd64.zip -O /tmp/envconsul.zip
+sudo unzip /tmp/envconsul.zip -d /usr/local/bin
+
 echo "Finished!"
 

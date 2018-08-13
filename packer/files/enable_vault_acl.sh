@@ -29,4 +29,11 @@ curl \
   "Token": "$ACL_TOKEN"
 }' http://127.0.0.1:8500/v1/agent/token/acl_token
 
+# use token on restart
+cat >/tmp/acl_token.hcl <<EOF
+acl_token = "$ACL_TOKEN"
+EOF
+
+sudo mv /tmp/acl_token.hcl
+
 sudo systemctl disable consul_enable_acl.service

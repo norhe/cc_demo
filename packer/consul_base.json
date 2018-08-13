@@ -33,7 +33,7 @@
       },
       {
         "type": "file",
-        "source": "binaries/consul-enterprise_1.2.1+prem_linux_amd64.zip",
+        "source": "binaries/consul-enterprise_1.2.2+prem_linux_amd64.zip",
         "destination": "/tmp/consul.zip"
       },
       {
