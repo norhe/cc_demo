@@ -21,7 +21,7 @@ After=network.target
 [Service]
 Type=simple
 User=ubuntu
-ExecStart=/usr/bin/node /home/ubuntu/src/listing-service/server.js
+ExecStart=/usr/local/bin/envconsul -prefix listing_conf /usr/bin/node /home/ubuntu/src/listing-service/server.js
 Restart=always
 
 [Install]

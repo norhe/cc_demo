@@ -20,7 +20,7 @@ After=network.target
 [Service]
 Type=simple
 User=ubuntu
-ExecStart=/usr/bin/python3 /home/ubuntu/src/product-service/product.py
+ExecStart=/usr/local/bin/envconsul -prefix product_conf /usr/bin/python3 /home/ubuntu/src/product-service/product.py
 Restart=always
 
 [Install]
